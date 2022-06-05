@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using Android.Net;
 
 namespace App
 {
@@ -17,7 +18,7 @@ namespace App
             SetContentView(Resource.Layout.activity_main);
 
             ImageView im = FindViewById<ImageView>(Resource.Id.imageView1);
-            im.SetImageURI(new Uri(""));
+            im.SetImageURI(Uri.Parse("http://192.168.0.242:3000/php/photos/Piekny_Obraz.png"));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
