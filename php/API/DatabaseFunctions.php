@@ -22,13 +22,17 @@ function GetAllPhotos(mysqli $connect, int $page = 0){
     return $data;
 }
 
-function UploadPhoto(mysqli $connect, string $_name, string $_path ){
+function UploadPhotoToDB(mysqli $connect, string $_name, string $_path, string $_who){
     $name = mysqli_escape_string($connect, $_name);
     $path = mysqli_escape_string($connect, $_path);
-    $query = 'INSERT INTO `photos` (`Name`, `Path`) VALUES '.
-    '("'.$name.'", "'.$path.'")'
+    if (!strlen($_who) <= 0){
+        $who = mysqli_escape_string($connect, $_who);
+    }
+    else $who = mysqli_escape_string($connect, "Anonymous");
+    
+    $query = 'INSERT INTO `photos` (`Name`, `Path`, `Who`) VALUES '.
+    '("'.$name.'", "'.$path.'", "'.$who.'")'
     .';';
     //INSERT INTO `photos` (`Id`, `Name`, `Path`, `Who`) VALUES (NULL, '', '', NULL);
     $result = mysqli_query($connect, $query) Or die(mysqli_error($connect));
 }
-
