@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.MainPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" Text="&lt;" FontSize="30"></Button>
+        <Label Grid.Column="1" Grid.Row="0" Text="0" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Button Grid.Column="2" Grid.Row="0" Text=">" FontSize="30"></Button>
+
+        <Image x:Name="img" Grid.ColumnSpan="3" Grid.Row="1"  >
+            
+        </Image>
+
+        <Button Grid.Column="0" Grid.Row="2" Text="Wyslij nowy" FontSize="23" Clicked="Button_Clicked_1"></Button>
+    </Grid>
+
+</ContentPage>
