@@ -11,9 +11,9 @@ if($conn == false || $conn == null){
 }
 mysqli_query($conn, 'SET NAMES UTF8');
 
-function GetAllPhotos(mysqli $connect, int $page = 0){
+function GetAllPhotos(mysqli $connect, int $page = 0, int $capacity = 10){
     
-    $query = 'SELECT * FROM photos LIMIT 10 OFFSET '.$page.';';
+    $query = 'SELECT * FROM photos LIMIT '.$capacity.' OFFSET '.$page.';';
 
     $result = mysqli_query($connect, $query);
 
